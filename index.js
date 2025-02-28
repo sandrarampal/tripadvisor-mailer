@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { MailerSend, EmailParams, Sender, Recipient } = require("mailersend");
+const { log } = require("console");
 require("dotenv").config();
 
 const app = express();
@@ -51,6 +52,6 @@ app.post("/form", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server is started ! 📧");
 });
