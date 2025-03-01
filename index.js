@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.post("/form", async (req, res) => {
   try {
     //   Le console.log de req.body nous affiche les données qui ont été rentrées dans les inputs (dans le formulaire frontend) :
-    console.log(req.body);
+    // console.log(req.body);
 
     // On destructure req.body
     const { firstname, lastname, email, message } = req.body;
@@ -44,7 +44,7 @@ app.post("/form", async (req, res) => {
     // On envoie les infos à MailerSend pour créer le mail et l'envoyer.
     const result = await mailerSend.email.send(emailParams);
 
-    console.log(result); // réponse de MailerSend
+    // console.log(result); // réponse de MailerSend
 
     res.status(200).json(result);
   } catch (error) {
